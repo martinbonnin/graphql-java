@@ -42,7 +42,7 @@ public class ExecutionContextBuilder {
     Object localContext;
     ExecutionInput executionInput;
     DataLoaderDispatchStrategy dataLoaderDispatcherStrategy = DataLoaderDispatchStrategy.NO_OP;
-    boolean propagateErrors;
+    boolean propagateErrors = true;
 
     /**
      * @return a new builder of {@link graphql.execution.ExecutionContext}s
