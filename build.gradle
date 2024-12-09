@@ -338,6 +338,12 @@ publishing {
             }
         }
     }
+    repositories {
+        maven {
+            name = "gcs"
+            url = "gcs://martin-maven/m2"
+        }
+    }
 }
 
 nexusPublishing {

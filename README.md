@@ -1,3 +1,33 @@
+# GraphQL Java fork
+
+This is a fork of GraphQL Java that supports the `@errorHandling` directive:
+
+```graphql
+enum OnError {
+    "Propagate errors to the nearest nullable parent position (default)"
+    PROPAGATE
+    "Always return null for errors"
+    NULL
+}
+directive @errorHandling(onError: OnError!) on QUERY | MUTATION | SUBSCRIPTION
+
+query GetFoo @errorHandling(onError: NULL) {
+    foo
+}
+```
+
+To use this library:
+
+```kotlin
+repositories {
+  maven("https://storage.googleapis.com/martin-maven/m2/")
+}
+
+dependencies {
+  implementation("com.graphql-java:graphql-java:22.3-error.handling.1")
+}
+```
+
 # GraphQL Java
 
 Discuss and ask questions in our Discussions: https://github.com/graphql-java/graphql-java/discussions
